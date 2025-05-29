@@ -1,51 +1,40 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float shootInterval = 2f;
-    public float bulletSpeed = 12f;
-    public float detectionRange = 15f;
+    public float bulletSpeed = 20f;
+    public float fireRate = 2f; // Tiempo entre disparos
 
-    private Transform target;
-    private float shootTimer;
+    private float fireTimer;
+    public Transform target; // Asigna el jugador manualmente desde el inspector
 
-    void Start()
-    {
-        target = GameObject.FindWithTag("Player")?.transform;
-    }
 
     void Update()
     {
-        if (target == null || firePoint == null || bulletPrefab == null) return;
+        if (target == null) return;
 
-        float dist = Vector3.Distance(transform.position, target.position);
-        if (dist <= detectionRange)
+        fireTimer += Time.deltaTime;
+        if (fireTimer >= fireRate)
         {
-            shootTimer += Time.deltaTime;
-            if (shootTimer >= shootInterval)
-            {
-                Shoot();
-                shootTimer = 0f;
-            }
+            fireTimer = 0f;
 
-            // Girar hacia el jugador
-            Vector3 direction = (target.position - transform.position).normalized;
-            direction.y = 0;
-            transform.forward = direction;
-        }
-    }
+            // Apuntar al jugador
+            Vector3 direction = (target.position - firePoint.position).normalized;
+            firePoint.rotation = Quaternion.LookRotation(direction); // Opcional: gira el firePoint hacia el jugador
 
-    void Shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.linearVelocity = firePoint.forward * bulletSpeed;
+            // Instanciar y lanzar la bala
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.velocity = firePoint.forward * bulletSpeed;
+
         }
     }
 }
+
+
+
+
 
 
