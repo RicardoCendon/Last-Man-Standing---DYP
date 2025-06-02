@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737388043880859201, guid: e8d83cf01ec3209448d446628c08a4dc, type: 3}
       propertyPath: m_Name
-      value: BulletEnemigo Variant
+      value: BulletEnemigo
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8467372652154199489, guid: e8d83cf01ec3209448d446628c08a4dc, type: 3}
@@ -79,5 +79,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 15
+  damage: 1
   lifeTime: 2
