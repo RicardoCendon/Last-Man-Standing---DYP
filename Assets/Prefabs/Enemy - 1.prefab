@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.862806
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8365552201738294511, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f1b867591403fe642ae1d69ad703f29a, type: 2}
+    - target: {fileID: -5258791721928388097, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a5f55764bdbf974982b1a954f6106b9, type: 2}
+    - target: {fileID: -2255725062476703520, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cdd6efd20984c6438d2e0c87cb2cc03, type: 2}
     - target: {fileID: 919132149155446097, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
       propertyPath: m_Name
       value: Enemy - 1
@@ -56,6 +68,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3593634957030984454, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a5f55764bdbf974982b1a954f6106b9, type: 2}
+    - target: {fileID: 6706990990955670532, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a5f55764bdbf974982b1a954f6106b9, type: 2}
+    - target: {fileID: 6954307757982347702, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f1b867591403fe642ae1d69ad703f29a, type: 2}
+    - target: {fileID: 7881321121541640152, guid: ef0794150b0d7bc4e9e9957a1830d92c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1897419934fc961459ec8cb22dd2c3cb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -187,8 +215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   nivelActual: 1
-  baseSpeed: 1.5
+  baseSpeed: 2.5
   speedPerNivel: 1
+  attackDistance: 10
 --- !u!95 &3996950160500391097
 Animator:
   serializedVersion: 7
@@ -275,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damageMultiplier: 1.5
+  healthText: {fileID: 0}
 --- !u!114 &5904580934066433716
 MonoBehaviour:
   m_ObjectHideFlags: 0
