@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class Health : MonoBehaviour
 {
@@ -28,9 +31,19 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            if (CompareTag("Player"))
+            {
+                Destroy(gameObject);
+                Debug.Log("Player has died.");
+                SceneManager.LoadScene("Menú");
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
+
 
     private void UpdateUI()
     {
@@ -40,11 +53,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Die()
-    {
-        Debug.Log($"{gameObject.name} has died.");
-        Destroy(gameObject);
-    }
 }
 
 
