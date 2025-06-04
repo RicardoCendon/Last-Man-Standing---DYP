@@ -13,9 +13,8 @@ public class EnemyAI : MonoBehaviour
 
     private bool isDead = false;
 
-    // Configuración para shooters
-    public float attackDistance = 10f; // distancia para disparar (no acercarse más)
-
+    
+    public float attackDistance = 10f; 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -45,7 +44,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Shooter enemigos
+ 
             if (distanceToTarget > attackDistance)
             {
                 agent.SetDestination(target.position);
@@ -53,7 +52,7 @@ public class EnemyAI : MonoBehaviour
             else
             {
                 agent.SetDestination(transform.position); // Se detienen para disparar
-                // (Acá después podrías agregar código para disparar)
+                
             }
         }
 
@@ -75,7 +74,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isRunning", false);
         animator.SetBool("isDying", true);
 
-        Destroy(gameObject, 2f); // ajustá este tiempo si tu animación de morir dura más
+        Destroy(gameObject, 2f); 
     }
 }
 

@@ -5,8 +5,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 20f;
-    //Sonido
-    public AudioClip shootSound;
+    public AudioClip shootSound; 
     private AudioSource audioSource;
  
 

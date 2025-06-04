@@ -18,8 +18,6 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Ignorar colisiones con el que disparó (por tag si quieres)
-        if (other.CompareTag("Player")) return;
 
         Health health = other.GetComponent<Health>();
         if (health != null)

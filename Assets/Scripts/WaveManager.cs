@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // ¡Asegúrate de importar esto arriba!
+using TMPro; 
 using UnityEngine.SceneManagement; 
 using UnityEngine.UI; // Para el mini sistema de UI oleada
 
@@ -44,7 +44,6 @@ public class WaveManager : MonoBehaviour
                 waveText.gameObject.SetActive(true);
             }
 
-            // Previene que se vuelva a mostrar
             isSpawning = true;
             StartCoroutine(ReturnToMenuAfterDelay(7f));
         }

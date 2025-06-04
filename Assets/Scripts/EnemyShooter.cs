@@ -7,7 +7,7 @@ public class EnemyShooter : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     [Range(0.1f, 7f)]
-    public float fireRate = 5f; // Tiempo entre disparos
+    public float fireRate = 5f; // Tiempo entre disparos (en segundos)
     public float bulletSpeed = 20f;
 
     [Header("Target")]
@@ -18,7 +18,6 @@ public class EnemyShooter : MonoBehaviour
 
     void Start()
     {
-        // Si no fue asignado manualmente, busca al jugador por tag
         if (target == null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -31,7 +30,6 @@ public class EnemyShooter : MonoBehaviour
     {
         if (target == null) return;
 
-        // Temporizador para controlar frecuencia de disparo
         fireTimer += Time.deltaTime;
         if (fireTimer >= fireRate)
         {

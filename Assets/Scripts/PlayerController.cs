@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         // Movimiento relativo a la cámara
         Vector3 move = cameraTransform.forward * input.z + cameraTransform.right * input.x;
         move.y = 0;
-        float speedMultiplier = Input.GetKey(KeyCode.LeftShift) ? 10f : 1f;
+        float speedMultiplier = Input.GetKey(KeyCode.LeftShift) ? 5f : 1f;
         controller.Move(move.normalized * moveSpeed * speedMultiplier * Time.deltaTime);
 
         // Rotación con el mouse horizontal
